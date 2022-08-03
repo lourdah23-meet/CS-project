@@ -4,11 +4,20 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="../static/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body>
 	{% for pin in Ideas %}
-	<div> 
-		{{ pin['title'] }}
+	<div id="title"> 
+		{{ pin['Title'] }}
+	</div>
+	<div id="image">
+		{{pin ['Image'] }}
+	</div>
+	<div id= 'description'>
+		{{pin ['Description'] }}
 	</div>
 	{%endfor%}
 </body>

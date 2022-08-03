@@ -4,21 +4,60 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Add Idea</title>
+	<link rel="stylesheet" type="text/css" href="../static/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body>
-<form action="/add_idea" method="POST">
-    <input type="text" name="Title" placeholder="Title">
-    <input type="text" name="Description" placeholder="Description">
-    <input type="file" name= "Image" accept="image/*">
-    <input type="radio" name="adjective" value="Sports">Sports
-    <input type="radio" name="adjective" value="Makeup And Fashion">Makeup And Fashion
-    <input type="radio" name="adjective" value="Technology">Technology
-    <input type="radio" name="adjective" value="Animals">Animals
-    <input type="radio" name="adjective" value="Science">Science
+	<div class="testbox">
+	<form action="/add_idea" method="POST">
+	<div class="banner">
+          <h1><input type="text" name="Title" placeholder="Title"></h1>
+          <br>
 
-<div>
-    <input type="submit"/>
+          <h2><input type="text" name= "Image" placeholder="Image Link"></h2>
 
+        </div>
+        <br/>
+        <p><input type="text" name="Description" placeholder="Description"></p>
+        <br/>
+        <div class="colums">
+        
+        
+        <div class="week">
+          <div class="question">
+            <label>Choose the category that your post falls under </label>
+            <div class="question-answer">
+              <div>
+                <input type="radio" value="none" id="radio" name="category"/>
+                <label for= input type="radio" name="adjective" value="Sports"><span>Sports</span></label>
+              </div>
+              <div>
+                <input  type="radio" value="none" id="radio_1" name="category"/>
+                <label for= input type="radio" name="adjective" value="Makeup And Fashion"><span>Makeup And Fashion</span></label>
+              </div>
+              <div>
+                <input  type="radio" value="none" id="radio_2" name="category"/>
+                <label for= input type="radio" name="adjective" value="Technology"><span>Technology</span></label>
+              </div>
+              <div>
+                <input  type="radio" value="none" id="radio_3" name="day"/>
+                <label for= input type="radio" name="adjective" value="Animals"><span>Animals</span></label>
+              </div>
+              <div>
+                <input  type="radio" value="none" id="radio_4" name="day"/>
+                <label for= input type="radio" name="adjective" value="Science"><span>Science</span></label>
+              </div>
+              
+            </div>
+        </div>
+         <br>
+        <div class="btn-block">
+        	<br>
+          <button type="submit" href="/">Submit</button>
+        </div>
+      </form>
+    </div>
 </div>
 </form>
 </body>

@@ -21,7 +21,6 @@ firebaseConfig = {
 firebase= pyrebase.initialize_app(firebaseConfig)
 auth= firebase.auth()
 db= firebase.database()
-app= Flask(__name__)
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -29,17 +28,18 @@ def signup():
 	if request.method=="POST":
 		emailadress= request.form['emailadress']
 		password=request.form['password']
-		try:
-			login_session['user']= auth.create_user_with_email_and_password(emailadress,password)
-			user={"emailadress": request.form['emailadress'],
+		#try:
+		login_session['user']= auth.create_user_with_email_and_password(emailadress,password)
+		user={"emailadress": request.form['emailadress'],
 			"fullname": request.form['fullname'],
 			"password": request.form['password'],
-			"preference": request.form['adjective']
+			"preference": request.form.getlist("adjective")
 			}
-			db.child('Users').child(login_session['user']['localId']).set(user)
+		db.child('Users').child(login_session['user']['localId']).set(user)
+		return redirect(url_for('add_idea'))
 
-		except:
-			error="Creating an account Failed"
+		#except:
+		#	error="Creating an account Failed"
 	return render_template('signup.html')
 # 'ADD  WHEN HOME PAGE IS READY'
 
@@ -73,15 +73,13 @@ def add_idea():
 
 @app.route('/home', methods=['GET', 'POST'])
 def home():
-	#Ideas= db.child('Pins').get().val()
-
-		#adjectives = db.child("Users").child(login_session['user']['localId']).child("Interests").get().val() #["Coding", "Sports"]#["Makeup And Fashion", "Sports", "Technology", "Animals", "Science"]# self.request.get('adjective', allow_multiple=True)
-	adjectives=["Technology", "Sports", "Animals", "Science", "Makeup And Fashion"]
+	adjectives=db.child('Users').child(login_session['user']['localId']).child('preference').get().val()#["Technology", "Sports", "Animals", "Science", "Makeup And Fashion"]
 	temp = []
 	for a in adjectives:
 		# increment count
 		temp.extend(db.child("Pins").child(a).get().val().values())
 	random.shuffle(temp)
+	print(temp)
 
 	return render_template('home.html', Ideas=temp)
 
