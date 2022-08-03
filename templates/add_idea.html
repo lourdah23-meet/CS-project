@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Add Idea</title>
+</head>
+<body>
+<form action="/add_idea" method="POST">
+    <input type="text" name="Title" placeholder="Title">
+    <input type="text" name="Description" placeholder="Description">
+    <input type="file" name= "Image" accept="image/*">
+    <input type="radio" name="adjective" value="Sports">Sports
+    <input type="radio" name="adjective" value="Makeup And Fashion">Makeup And Fashion
+    <input type="radio" name="adjective" value="Technology">Technology
+    <input type="radio" name="adjective" value="Animals">Animals
+    <input type="radio" name="adjective" value="Science">Science
+
+<div>
+    <input type="submit"/>
+
+</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sign Up</title>
+</head>
+<body>
+<form method="POST" action="/signup">
+	<h1> Welcome To Pinterest</h1>
+	<h2> Find New Ideas To Try </h2>
+	<div>
+		<label> Email Adress*</label>
+		<div>
+			<input type="emailadress"  name="emailadress"  placeholder="Email Adress" required>
+		</div>
+	</div>
+		
+	<div>
+		<label> Full Name*</label>
+		<div>
+			<input type="fullname"  name="fullname"  placeholder="Full Name" required>
+		</div>
+	</div>
+
+	<div>
+		<label> Password*</label>
+		<div>
+			<input type="password"  name="password"  placeholder="Password" required>
+		</div>
+	</div>
+    <h2> Choose which categories you're interested in </h2>
+    <input type="checkbox inline" name="adjective" value="Sports">Sports
+    <input type="checkbox inline" name="adjective" value="Makeup And Fashion">Makeup And Fashion
+    <input type="checkbox inline" name="adjective" value="Technology">Technology
+    <input type="checkbox inline" name="adjective" value="Animals">Animals
+    <input type="checkbox inline" name="adjective" value="Science">Science
+
+
+	<div>
+    	<input type="submit">
+    </div>
+    
+</form>
+<br>
+<a href="/"><button>Log In</button></a>
+
+</form>
+</body>
+</html>
