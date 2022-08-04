@@ -11,14 +11,19 @@
 <body>
 	<div class="testbox">
 	<form action="/add_idea" method="POST">
-	<div class="banner">
-          <h1><input type="text" name="Title" placeholder="Title"></h1>
+		<h1 id= "ok"> Share An Idea! </h1>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+	
+          <input type="text" name="Title" placeholder="Title">
           <br>
 
-          <h2><input type="text" name= "Image" placeholder="Image Link"></h2>
+          <input type="text" id= "ideah2" name= "Image" placeholder="Image Link">
 
-        </div>
-        <br/>
+        
         <p><input type="text" name="Description" placeholder="Description"></p>
         <br/>
         <div class="colums">
@@ -29,24 +34,22 @@
             <label>Choose the category that your post falls under </label>
             <div class="question-answer">
               <div>
-                <input type="radio" value="none" id="radio" name="category"/>
-                <label for= input type="radio" name="adjective" value="Sports"><span>Sports</span></label>
+                <input type="radio" value="Sports" id="radio" name="category"/>Sports
+              
               </div>
               <div>
-                <input  type="radio" value="none" id="radio_1" name="category"/>
-                <label for= input type="radio" name="adjective" value="Makeup And Fashion"><span>Makeup And Fashion</span></label>
+                <input  type="radio" value="Makeup And Fashion" id="radio_1" name="category"/>Makeup And Fashion
               </div>
               <div>
-                <input  type="radio" value="none" id="radio_2" name="category"/>
-                <label for= input type="radio" name="adjective" value="Technology"><span>Technology</span></label>
+                <input  type="radio" id="radio_2" name="category" value="Technology">Technology
+
               </div>
               <div>
-                <input  type="radio" value="none" id="radio_3" name="day"/>
-                <label for= input type="radio" name="adjective" value="Animals"><span>Animals</span></label>
+                <input  type="radio" value="Animals" id="radio_3" name="category"/>Animals
+                
               </div>
               <div>
-                <input  type="radio" value="none" id="radio_4" name="day"/>
-                <label for= input type="radio" name="adjective" value="Science"><span>Science</span></label>
+                <input  type="radio" value="Science" id="radio_4" name="category"/>Science
               </div>
               
             </div>

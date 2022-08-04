@@ -65,7 +65,7 @@ def add_idea():
 		"Description": request.form['Description'],
 		"Image": request.form['Image'],
 		"uid": login_session['user']['localId']}
-		db.child("Pins").child(request.form['adjective']).push(idea)
+		db.child("Pins").child(request.form['category']).push(idea)
 		return redirect(url_for('home'))
 		# except:
 		#   print("Couldn't add idea")
@@ -77,11 +77,12 @@ def home():
 	temp = []
 	for a in adjectives:
 		# increment count
-		temp.extend(db.child("Pins").child(a).get().val().values())
+		if db.child("Pins").child(a).get().val():
+			temp.extend(db.child("Pins").child(a).get().val().values())
 	random.shuffle(temp)
 	print(temp)
 
-	return render_template('home.html', Ideas=temp)
+	return render_template('index.html', Ideas=temp)
 
 @app.route('/', methods=['GET', 'POST'])
 def start():

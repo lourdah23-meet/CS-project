@@ -11,13 +11,12 @@
 <body>
 	{% for pin in Ideas %}
 	<div id="title"> 
-		{{ pin['Title'] }}
+		
 	</div>
-	<div id="image">
-		{{pin ['Image'] }}
+	<div id="image"><img src="{{pin ['Image'] }}">
 	</div>
 	<div id= 'description'>
-		{{pin ['Description'] }}
+		
 	</div>
 	{%endfor%}
 </body>

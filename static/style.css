@@ -229,16 +229,15 @@ nav ul li a{
       background: #fff;
       box-shadow: 0 0 8px  #669999; 
       }
-      .banner {
+      /*.banner {
       position: relative;
       height: 300px;
-      background-image: url("/uploads/media/default/0001/02/8070c999efd1a155ad843379a5508d16f544aeaf.jpeg");  
-      background-size: cover;
+      background-image: url("../static/logo.png") 
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      }
+      }*/
       .banner::after {
       content: "";
       background-color: rgba(0, 0, 0, 0.3); 
@@ -382,6 +381,8 @@ nav ul li a{
       display:block;
       padding-bottom:5px;
       }
-    /*.title{*/
-        
-    /*}*/
+
+      #ok {
+        color: red !important;
+        text-align: center !important;
+      }
